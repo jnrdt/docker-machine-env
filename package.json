@@ -1,0 +1,29 @@
+{
+  "name": "docker-machine-env",
+  "description": "get the env of docker in a variable",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jonathan Redouté",
+    "url": "http://www.jnrdt.com/"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "keywords": [
+    "docker",
+    "docker-machine",
+    "env"
+  ],
+  "dependencies": {
+    "lodash": "^4.15.0"
+  },
+  "devDependencies": {}
+}
