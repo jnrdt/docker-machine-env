@@ -4,6 +4,11 @@ const child_process = require('child_process');
 
 module.exports = function(host, callback){
 
+	if(!host)
+	{
+		throw "a host has to be specified";
+	}
+	
 	child_process.exec(`docker-machine env ${host}`, function(envError, envStdout, envStderr){
 		
 		var envs;
