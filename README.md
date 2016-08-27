@@ -16,7 +16,7 @@ The module docker-machine-env gets from this command the considered environment 
 `npm install docker-machine-env`
 
 ## API documentation
-You can use this module in both Batch or Shell context. If Docker is not installed, it will throw an error. If docker-machine is not installed, it will silently return an empty object.
+You can use this module in both Batch or Shell context. If Docker is not installed, it will throw an error. If docker-machine is not installed, it will silently return an empty object. `docker-machine-env` is promisifyable.
 
 `dockerMachineEnv([machine,] callback(err, envs))`
 
@@ -80,5 +80,3 @@ dockerMachineEnv(function(err, envs){
 	}
 });
 ```
-
-`docker-machine-env` is promisifyable.
