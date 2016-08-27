@@ -2,6 +2,8 @@
 
 Get asynchronously the docker environment variables in a javascript object for further use.
 
+[![NPM](https://nodei.co/npm/docker-machine-env.png)](https://nodei.co/npm/docker-machine-env/)
+
 ## Use case
 
 You want to use Docker with Node from Windows.
