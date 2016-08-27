@@ -35,7 +35,7 @@ module.exports = function(host, callback){
 	child_process.exec(`docker-machine env ${machine}`, function(envError, envStdout, envStderr){
 		
 		var envs;
-		var err = envError || envStderr;
+		var err = envError || (envStderr? new Error(envStderr): null);
 		
 		if(!err)
 		{
@@ -55,6 +55,6 @@ module.exports = function(host, callback){
 			.value();
 		}
 		
-		callback(err ? new Error(err) : null, envs);
+		callback(err, envs);
 	})
 }
