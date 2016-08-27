@@ -98,7 +98,7 @@ dockerMachineEnv(function(err, envs){
 	//adding docker environment variables to the current process env
     Object.assign(process.env, envs);
 
-	//this use the process env previously defined
+	//this uses the process env previously defined
 	var docker = new Docker(); 
 	
 	if(err)
