@@ -1,13 +1,14 @@
 {
   "name": "docker-machine-env",
-  "description": "get the env of docker in a variable",
-  "version": "1.0.4",
+  "description": "Get asynchronously the docker environment variables in a javascript object for further use",
+  "version": "1.0.5",
   "author": {
     "name": "Jonathan Redouté",
     "url": "http://www.jnrdt.com/"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/jnrdt/docker-machine-env.git"
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha tests/**/*Test.js --reporter spec"
