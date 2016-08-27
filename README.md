@@ -15,9 +15,37 @@ The module docker-machine-env gets from this command the considered environment 
 ## Installation
 `npm install docker-machine-env`
 
-You can use this module in both Batch or Shell context.
+## API documentation
+You can use this module in both Batch or Shell context. If Docker is not installed, it will throw an error. If docker-machine is not installed, it will silently return an empty object.
 
-## How to use : example
+`dockerMachineEnv([machine,] callback(err, envs))`
+
+### machine
+
+Type: `String`
+
+The name of the docker machine you want the environment variables. Default to `default`.
+
+### callback
+
+Type: `Function`
+
+A callback for handling the variables. `err` will contain string formatted errors throwed by the command, `envs` will contain the environament variables as follow :
+
+```javascript
+{
+  DOCKER_TLS_VERIFY: '1',
+  DOCKER_HOST: 'tcp://192.168.99.100:2376',
+  DOCKER_CERT_PATH: 'C:\\Users\\MyUser\\.docker\\machine\\machines\\default',
+  DOCKER_MACHINE_NAME: 'default' 
+}
+```
+
+
+## How to use : Example
+
+Getting the result of a `docker ps`
+
 ```javascript
 var dockerMachineEnv = require('docker-machine-env');
 var exec = require('child_process').exec;
