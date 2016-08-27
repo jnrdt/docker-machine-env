@@ -56,9 +56,11 @@ contains the environment variables as follow :
 ```
 
 
-## How to use : Example
+## How to use
 
 Getting the result of a `docker ps`
+
+### with child_process
 
 ```javascript
 var dockerMachineEnv = require('docker-machine-env');
@@ -82,3 +84,36 @@ dockerMachineEnv(function(err, envs){
 	}
 });
 ```
+
+### with dockerode
+
+```javascript
+
+var Docker = require('dockerode');
+var fs     = require('fs');
+var dockerMachineEnv = require('docker-machine-env');
+
+dockerMachineEnv(function(err, envs){
+
+	//adding docker environment variables to the current process env
+    Object.assign(process.env, envs);
+
+	//this use the process env previously defined
+	var docker = new Docker(); 
+	
+	if(err)
+	{
+		//will throw an Error in the case docker-machine is not installed. 
+		//depending where you use it, that may not be what you want
+		throw err;
+	}
+	else
+	{
+		docker.listContainers({all: false}, function(err, containers) {
+            console.log(containers);
+        });
+	}
+});
+
+```
+
