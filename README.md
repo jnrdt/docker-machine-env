@@ -4,13 +4,13 @@ Get asynchronously the docker environment variables in a javascript object for f
 
 ## Use case
 
-You want to use Docker with Node (for example with child_process.exec) from Windows.
+You want to use Docker with Node from Windows.
 
 When you launch the Docker Quickstart Terminal, it sets some environment variables. When you're out of it, you have to run 
 `docker-machine env`
 that prints you some commands to run to set environment variables.
 
-The module docker-machine-env gets from this command the considered environment variables in a javascript object so that you can use it in child_process.exec.
+The module docker-machine-env gets from this command the considered environment variables in a javascript object so that you can use it in `child_process.exec` for example.
 
 ## Installation
 `npm install docker-machine-env`
