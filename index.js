@@ -18,8 +18,9 @@ module.exports = function(host, callback){
 	child_process.exec(`docker-machine env ${host}`, function(envError, envStdout, envStderr){
 		
 		var envs;
+		var err = envError || envStderr;
 		
-		if(!envError && !envStderr)
+		if(!err)
 		{
 			envs = _.chain(envStdout.split('\n'))
 			.filter((cmd) => {
@@ -37,6 +38,6 @@ module.exports = function(host, callback){
 			.value();
 		}
 		
-		callback(envError || envStderr, envs);
+		callback(err ? new Error(err) : null, envs);
 	})
 }
