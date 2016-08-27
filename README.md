@@ -80,3 +80,5 @@ dockerMachineEnv(function(err, envs){
 	}
 });
 ```
+
+`docker-machine-env` is promisifyable.
