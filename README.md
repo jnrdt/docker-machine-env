@@ -30,7 +30,7 @@ The name of the docker machine you want the environment variables. Default to `d
 
 Type: `Function`
 
-A callback for handling the variables. `err` will contain string formatted errors throwed by the command, `envs` will contain the environament variables as follow :
+A callback for handling the variables. `err` will contain string formatted errors throwed by the command, `envs` will contain the environment variables as follow :
 
 ```javascript
 {
