@@ -1,6 +1,6 @@
 # docker-machine-env
 
-Get asynchronously the docker environment variables in a javascript variable for further use.
+Get asynchronously the docker environment variables in a javascript object for further use.
 
 ## Use case
 
