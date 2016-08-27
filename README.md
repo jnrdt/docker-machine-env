@@ -26,11 +26,23 @@ Type: `String`
 
 The name of the docker machine you want the environment variables. Default to `default`.
 
-### callback
+### callback(err, envs)
 
 Type: `Function`
 
-A callback for handling the variables. `err` will contain string formatted errors throwed by the command, `envs` will contain the environment variables as follow :
+A callback for handling the variables. 
+
+#### err
+
+Type: `Error`
+
+contains errors thrown by the command, `null` if no error. You may not throw this error if docker-machine is not installed
+
+#### envs
+
+Type: `Object`
+
+contains the environment variables as follow :
 
 ```javascript
 {
@@ -54,13 +66,16 @@ dockerMachineEnv(function(err, envs){
 
 	if(err)
 	{
-		throw new Error(err);
+		//will throw an Error in the case docker-machine is not installed. 
+		//depending where you use it, that may not be what you want
+		throw err;
 	}
 	else
 	{
 		exec('docker ps', {env: envs}, (error, stdout, stderr) => {
 		
 			//you can print the result of docker ps
+			console.log(stdout)
 		})
 	}
 });
