@@ -1,7 +1,7 @@
 {
   "name": "docker-machine-env",
   "description": "get the env of docker in a variable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Jonathan Redouté",
     "url": "http://www.jnrdt.com/"

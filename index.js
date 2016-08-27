@@ -1,3 +1,4 @@
+'use strict';
 
 const _ = require('lodash');
 const child_process = require('child_process');
@@ -7,7 +8,7 @@ const child_process = require('child_process');
 module.exports = function(host, callback){
 
 	var machine = "default";
-	var callback;
+	var callback = null;
 	
 	switch(arguments.length)
 	{
@@ -20,7 +21,7 @@ module.exports = function(host, callback){
 				throw new Error("a machine has to be specified as a string");
 			}
 		case 1:
-			callback = arguments[arguments.length -1]
+			callback = arguments[arguments.length -1];
 			if(!callback || typeof callback != "function")
 			{
 				throw new Error("a callback(err, envs) has to be specified as a function");
