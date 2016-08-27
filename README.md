@@ -10,7 +10,7 @@ When you launch the Docker Quickstart Terminal, it sets some environment variabl
 `docker-machine env`
 that prints you some commands to run to set environment variables.
 
-The module docker-machine-env gets from this command the considered environment variables in a javascript object so that you can use it in `child_process.exec` for example.
+The module `docker-machine-env` gets from this command the considered environment variables in a javascript object so that you can use it in `child_process.exec` for example.
 
 ## Installation
 `npm install docker-machine-env`
