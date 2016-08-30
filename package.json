@@ -1,7 +1,7 @@
 {
   "name": "docker-machine-env",
   "description": "Get asynchronously the docker environment variables in a javascript object for further use",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "name": "Jonathan Redouté",
     "url": "http://www.jnrdt.com/"
