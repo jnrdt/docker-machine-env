@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('lodash');
 const child_process = require('child_process');
 
 //host, callback
@@ -39,22 +38,13 @@ module.exports = function(host, callback){
 		
 		if(!err)
 		{
-			envs = _.chain(envStdout.split('\n'))
-			.filter((cmd) => {
-				var instr = cmd.split(' ')[0];
-				return instr == "SET" || instr == "export";
+			envs = {};
+			envStdout.toString().split(/\n/).forEach(function (line) {
+				var match = line.match(/(SET|export) ([^=]*)=(.*)/)
+				if (match) envs[match[2]] = match[3].replace(/"/g, '');
 			})
-			.map((cmd) => {
-				
-				var keyvalue = cmd.split(' ')[1].split('=');
-				var key = keyvalue[0];
-				var value =  keyvalue[1].replace(/"/g, '');
-				return [key, value];
-			})
-			.fromPairs()
-			.value();
 		}
-		
+
 		callback(err, envs);
 	})
 }

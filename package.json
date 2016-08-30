@@ -26,9 +26,7 @@
     "docker-machine",
     "env"
   ],
-  "dependencies": {
-    "lodash": "^4.15.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "mocha": "^3.0.2",
     "should": "^11.1.0",
