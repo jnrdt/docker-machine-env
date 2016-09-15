@@ -2,7 +2,7 @@
 
 Get asynchronously the docker environment variables in a javascript object for further use.
 
-[![NPM](https://nodei.co/npm/docker-machine-env.png)](https://nodei.co/npm/docker-machine-env/)
+[![NPM](https://nodei.co/npm/docker-machine-env.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/docker-machine-env/)
 
 ## Use case
 
